@@ -9,7 +9,7 @@ public class FairytaleGUI extends Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("Fairytale Library");
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(getClass().getResource("Core/FairytaleGUI.fxml"));
+        loader.setLocation(getClass().getResource("view/FairytaleGUI.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
         stage.show();

@@ -1,3 +1,5 @@
+import model.Date;
+
 import java.io.*;
 import java.util.Scanner;
 

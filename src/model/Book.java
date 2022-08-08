@@ -1,6 +1,9 @@
+package model;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Book extends Items
+public class Book extends Items implements Serializable
 {
   private int isbn;
 
@@ -22,7 +25,7 @@ public class Book extends Items
 
   @Override
   public String toString() {
-    return "Book: = "+ super.toString() + ", ISBN: " + isbn ;
+    return "model.Book: = "+ super.toString() + ", ISBN: " + isbn ;
 
   }
 

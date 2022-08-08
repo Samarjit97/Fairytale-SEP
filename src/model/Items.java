@@ -1,6 +1,9 @@
+package model;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Items
+public class Items implements Serializable
 {
   private String title;
   private String author;

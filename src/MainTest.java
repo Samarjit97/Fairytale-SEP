@@ -1,10 +1,13 @@
+import model.*;
+import utils.ModelManagement;
+
 import java.util.Arrays;
 
 public class MainTest {
     public static void main(String[] args) {
-      /*  Items items=new Items("samanjit", "singh");
-        items=new Book(1387873,"YO BABY","SINGH");
-        items=new Article("Plural","Yo Baby", "Singh");
+      /*  model.Items items=new model.Items("samanjit", "singh");
+        items=new model.Book(1387873,"YO BABY","SINGH");
+        items=new model.Article("Plural","Yo Baby", "Singh");
 
         System.out.println(items.toString());
         */
@@ -29,38 +32,18 @@ public class MainTest {
 
 
 
-
-        Borrower samar=new Borrower("samanjit singh","sam@gmail.com",12238,"Student");
-        samar.addArticle(article);
-        samar.addBook(book);
-        samar.addBook(citron);
-        samar.addBook(samr);
-
-        Reservation reservation=new Reservation(startDate,EndDate,samar);
-        System.out.println(reservation.getBorrower());
+        ItemsList itemsList = new ItemsList();
+        itemsList.addArticle(article);
+        itemsList.addBook(book);
+        itemsList.addBook(samr);
+        itemsList.addBook(citron);
+        itemsList.addBook(alnok);
 
 
-        System.out.println(reservation.getBorrower().getBook(2));
+//        new ModelManagement().saveItems(itemsList);
+        System.out.println(itemsList.getAllArticles().get(0));
 
-        System.out.println(reservation.getStartDate());
-        System.out.println(reservation.getEndDate());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println(new ModelManagement().getAllItemList());
 
 
 

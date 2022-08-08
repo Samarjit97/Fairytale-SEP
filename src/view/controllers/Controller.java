@@ -1,4 +1,5 @@
-import javafx.collections.ObservableList;
+package view.controllers;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,9 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Spinner;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import utils.ModelManagement;
 
 
 import java.awt.*;
@@ -38,14 +38,14 @@ public class Controller {
 
 
     public void initialize(){
-        modelManagement=new ModelManagement("Reservation.bin","Items.bin");
+        modelManagement=new ModelManagement();
 
     }
 
     public void MangeBook(ActionEvent event){
         Parent root= null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Core/ManageBook.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../ManageBook.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -60,7 +60,7 @@ public class Controller {
     public void ManageArticle(ActionEvent event)  {
         Parent root= null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Core/ManageArticle.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../ManageArticle.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

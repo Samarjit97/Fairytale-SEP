@@ -1,3 +1,5 @@
+package model;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -96,7 +98,7 @@ public class Borrower implements Serializable
 
   @Override public String toString()
   {
-    return "Borrower{" + "name='" + name + '\'' + ", emailId='" + emailId + '\''
+    return "model.Borrower{" + "name='" + name + '\'' + ", emailId='" + emailId + '\''
         + ", phoneNumber=" + phoneNumber + ", role='" + role + '\'' +  '}';
   }
 

@@ -1,4 +1,8 @@
+package view.controllers;
+
 import javafx.fxml.FXML;
+import model.ItemsList;
+import utils.ModelManagement;
 
 import java.awt.*;
 
@@ -7,21 +11,15 @@ public class GUIController {
     @FXML private Button removeBook;
     @FXML private Button addArticle;
     @FXML private Button removeArticle;
-private  ModelManagement modelManagement;
+private ModelManagement modelManagement;
 
     public void initializer(){
-        modelManagement=new ModelManagement("Reservation.bin","Items.bin");
+        modelManagement=new ModelManagement();
 
     }
 
 
     public void createBook(){
-  ItemsList book=modelManagement.getAllBookItems();
-
-
-
-
-
 
     }
 

@@ -1,6 +1,9 @@
+package model;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Date
+public class Date implements Serializable
 {
   private int day;
   private int month;
@@ -14,12 +17,12 @@ public class Date
 
     }
     else
-      throw new IllegalDateException("The month is not valid");
+      throw new IllegalStateException("The month is not valid");
 
     if (day <= daysInMonth())
       this.day = day;
     else
-      throw new IllegalDateException(" The day is not valid");
+      throw new IllegalStateException(" The day is not valid");
   }
 
 
@@ -94,7 +97,7 @@ public class Date
 
   @Override public String toString()
   {
-    return "Date: = "+ "Day: = " + day + ", Month: = " + month + ", Year: = " + year;
+    return "model.Date: = "+ "Day: = " + day + ", Month: = " + month + ", Year: = " + year;
   }
 
   @Override public boolean equals(Object o)

@@ -1,5 +1,6 @@
+package model;
+
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Reservation implements Serializable
@@ -64,7 +65,7 @@ public class Reservation implements Serializable
   public String toString() {
     return "Start from: "+ startDate + "" +
               ", Deadline: "+ endDate +
-            ", Borrower: "+ borrower;
+            ", model.Borrower: "+ borrower;
 
   }
 }
