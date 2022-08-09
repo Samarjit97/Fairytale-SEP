@@ -9,12 +9,14 @@ public class Reservation implements Serializable
   private Date endDate;
 
   private  Borrower borrower;
+  private Items items;
+  private Article article;
 
-  public Reservation( Date startDate, Date endDate,Borrower borrower){
+  public Reservation( Date startDate, Date endDate,Borrower borrower,Items items){
     this.startDate=startDate;
     this.endDate=endDate;
     this.borrower=borrower;
-
+    this.items  = items;
   }
 
 

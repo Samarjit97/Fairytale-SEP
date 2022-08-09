@@ -70,6 +70,62 @@ public class Controller {
         stage.show();
 
     }
+    public void ReserveBook(ActionEvent event){
+        Parent root= null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../ReserveBook.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+    public void AddArticle(ActionEvent event){
+        Parent root= null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../AddArticle.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+    public void ManageBorrower(ActionEvent event){
+        Parent root= null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../ManageBorrower.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
+    public void  HomePage(ActionEvent event){
+        Parent root= null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../FairytaleGUI.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
 public void createBook(){
 String authorName=createAuthorName.getText();
@@ -80,7 +136,8 @@ int ISBN= (int) createISBN.getValue();
 
 }
 
+@FXML
+    private void ReserveItem(ActionEvent event) {
 
-
-
+    }
 }

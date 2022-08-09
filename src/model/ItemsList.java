@@ -35,19 +35,21 @@ public class ItemsList implements Serializable {
 
 
     public void removeBook(Book book) {
-        ArrayList<Book> temp = new ArrayList<>();
-        for (int i = 0; i < bookSize(); i++) {
-            if (!books.get(i).equals(book)) {
-                temp.add(books.get(i));
+        for (Book book1: books
+             ) {
+            if (book1.getIsbn()==book.getIsbn()){
+                System.out.println(book.getIsbn() + "Removing this one " + book1.getTitle());
+                books.remove(book1);
+                break;
             }
 
-
         }
-        books = temp;
 
     }
 
+
     public void removeArticle(Article article) {
+
         ArrayList<Article> temp = new ArrayList<>();
         for (int i = 0; i < articleSize(); i++) {
             if (!articles.get(i).equals(article)) {

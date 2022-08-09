@@ -1,13 +1,19 @@
 package view.controllers;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Book;
+import model.ItemsList;
 import utils.ModelManagement;
+
+import java.util.ArrayList;
 
 public class ManageBookController {
 
@@ -51,5 +57,18 @@ public class ManageBookController {
 
         tableView.setItems(FXCollections.observableList(modelManagement.searchBooksByTitle(titleInp.getText().trim())));
 
+    }
+@FXML
+    private void RemoveBookButton(ActionEvent event) {
+    TableView.TableViewSelectionModel selectionModel =
+            tableView.getSelectionModel();
+    selectionModel.setSelectionMode(
+            SelectionMode.SINGLE);
+    ObservableList<Book> selectedItems =
+            selectionModel.getSelectedItems();
+    System.out.println(selectedItems.get(0).getIsbn());
+
+
+    modelManagement.removeBook(selectedItems.get(0));
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controllers.AddArticleController">
+   <children>
+      <Label layoutX="99.0" layoutY="100.0" text="Title">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="144.0" text="Author">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="96.0" layoutY="201.0" text="Magazine">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="titleText" layoutX="194.0" layoutY="96.0" />
+      <TextField fx:id="authorText" layoutX="195.0" layoutY="140.0" />
+      <TextField fx:id="magazineText" layoutX="195.0" layoutY="197.0" />
+      <Button layoutX="195.0" layoutY="262.0" mnemonicParsing="false" onAction="#SubmitArticle" text="Submit" />
+   </children>
+</AnchorPane>

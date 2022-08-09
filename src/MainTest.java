@@ -27,7 +27,10 @@ public class MainTest {
         Book samr=new Book(627462,"Paradox","Samarjit");
         Book citron=new Book(627462,"Citron","Samarjit");
         Book alnok=new Book(627462,"Alnok","Samarjit");
+        Book Cetrazen=new Book(734723,"Cetrazen","Samarjit ");
         Article article=new Article("jfjshf","nhskfhsh","nsfnsdfj");
+        Borrower samar=new Borrower("samanjit","sas@gmail.com",6575775,"student");
+
 
 
 
@@ -43,7 +46,13 @@ public class MainTest {
 //        new ModelManagement().saveItems(itemsList);
         System.out.println(itemsList.getAllArticles().get(0));
 
+        System.out.println(new ModelManagement().getAllArticleItems());
+       // System.out.println(new ModelManagement().addBook(Cetrazen));
         System.out.println(new ModelManagement().getAllItemList());
+
+        Reservation reservation=new Reservation(startDate,EndDate,samar,Cetrazen);
+        System.out.println(new ModelManagement().getAllReservationList());
+
 
 
 

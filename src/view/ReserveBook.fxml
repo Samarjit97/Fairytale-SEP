@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controllers.ReserveBookController">
+   <children>
+      <Label layoutX="190.0" layoutY="42.0" text="ReserveBook">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="78.0" layoutY="104.0" text="ISBN">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="78.0" layoutY="161.0" text="Title">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="223.0" text="Author" />
+      <TextField fx:id="isbnText" layoutX="175.0" layoutY="102.0" />
+      <TextField fx:id="titleText" layoutX="176.0" layoutY="159.0" />
+      <TextField fx:id="authorText" layoutX="176.0" layoutY="219.0" />
+      <Button layoutX="176.0" layoutY="269.0" mnemonicParsing="false" onAction="#SubmitList" text="Submit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

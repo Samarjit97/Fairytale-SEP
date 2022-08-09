@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.controllers.Controller"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="471.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controllers.ManageArticleController">
+    <children>
+        <TableView fx:id="tableView" layoutX="30.0" layoutY="29.0" prefHeight="342.0" prefWidth="352.0">
+            <columns>
+                <TableColumn fx:id="magazineCol" prefWidth="75.0" text="Magazine" />
+                <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
+                <TableColumn fx:id="authorCol" prefWidth="75.0" text="Author" />
+            </columns>
+        </TableView>
+        <Button layoutX="30.0" layoutY="399.0" mnemonicParsing="false" onAction="#reservePressed" text="Reserve" />
+        <TextField fx:id="titleInp" layoutX="469.0" layoutY="71.0" />
+        <Button layoutX="511.0" layoutY="104.0" mnemonicParsing="false" onAction="#searchPressed" text="Search" />
+        <Label layoutX="409.0" layoutY="74.0" text="Search :">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+        <Label layoutX="511.0" layoutY="37.0" text="SearchByTitle">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+    </children>
 
 </AnchorPane>

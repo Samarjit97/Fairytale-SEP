@@ -6,20 +6,29 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controllers.ManageBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controllers.ManageBookController">
    <children>
       <TableView fx:id="tableView" layoutX="30.0" layoutY="29.0" prefHeight="342.0" prefWidth="352.0">
         <columns>
           <TableColumn fx:id="isbnCol" prefWidth="75.0" text="ISBN" />
-          <TableColumn fx:id="titleCol" prefWidth="75.0" text="title" />
+          <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
             <TableColumn fx:id="authorCol" prefWidth="75.0" text="Author" />
         </columns>
       </TableView>
-      <Button layoutX="147.0" layoutY="390.0" mnemonicParsing="false" onAction="#reservePressed" text="Reserve" />
-      <TextField fx:id="titleInp" layoutX="487.0" layoutY="146.0" />
-      <Button layoutX="525.0" layoutY="200.0" mnemonicParsing="false" onAction="#searchPressed" text="Search" />
-      <Label layoutX="467.0" layoutY="74.0" text="Search :" />
-      <Label layoutX="481.0" layoutY="117.0" text="Title" />
+      <Button layoutX="30.0" layoutY="399.0" mnemonicParsing="false" onAction="#reservePressed" text="Reserve" />
+      <TextField fx:id="titleInp" layoutX="511.0" layoutY="71.0" />
+      <Button layoutX="511.0" layoutY="104.0" mnemonicParsing="false" onAction="#searchPressed" text="Search" />
+      <Label layoutX="441.0" layoutY="74.0" text="Search :">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="511.0" layoutY="37.0" text="SearchByTitle">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="122.0" layoutY="399.0" mnemonicParsing="false" onAction="#RemoveBookButton" text="RemoveBook" />
+
    </children>
 </AnchorPane>

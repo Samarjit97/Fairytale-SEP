@@ -1,3 +1,5 @@
+package model;
+
 import model.Reservation;
 
 import java.io.Serializable;
