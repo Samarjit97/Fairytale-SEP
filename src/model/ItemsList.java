@@ -35,14 +35,14 @@ public class ItemsList implements Serializable {
 
 
     public void removeBook(Book book) {
-        for (Book book1: books
-             ) {
-            if (book1.getIsbn()==book.getIsbn()){
-                System.out.println(book.getIsbn() + "Removing this one " + book1.getTitle());
-                books.remove(book1);
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getIsbn() == book.getIsbn()){
+                books.remove(i);
+//                System.out.println("Removed from database :"+book);
+//                System.out.println("New list :");
+//                books.forEach(System.out::println);
                 break;
             }
-
         }
 
     }

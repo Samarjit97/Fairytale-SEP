@@ -1,19 +1,16 @@
 package view.controllers;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.SelectionMode;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Book;
-import model.ItemsList;
 import utils.ModelManagement;
-
-import java.util.ArrayList;
+import view.AlertBox;
 
 public class ManageBookController {
 
@@ -32,8 +29,7 @@ public class ManageBookController {
     private ModelManagement modelManagement;
 
 
-
-    public void initialize(){
+    public void initialize() {
         modelManagement = new ModelManagement();
         initializeTable();
     }
@@ -44,31 +40,39 @@ public class ManageBookController {
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
 
-        tableView.setItems(FXCollections.observableList(modelManagement.getAllBookItems()));
+        updateTableGUI();
+
 
     }
 
     @FXML
-    private void reservePressed(){
+    private void reservePressed() {
 
     }
+
     @FXML
-    private void searchPressed(){
+    private void searchPressed() {
 
         tableView.setItems(FXCollections.observableList(modelManagement.searchBooksByTitle(titleInp.getText().trim())));
 
     }
-@FXML
+
+    @FXML
     private void RemoveBookButton(ActionEvent event) {
-    TableView.TableViewSelectionModel selectionModel =
-            tableView.getSelectionModel();
-    selectionModel.setSelectionMode(
-            SelectionMode.SINGLE);
-    ObservableList<Book> selectedItems =
-            selectionModel.getSelectedItems();
-    System.out.println(selectedItems.get(0).getIsbn());
+
+        Book selectedBookFromGUI = tableView.getSelectionModel().getSelectedItem();
+        if (selectedBookFromGUI==null){
+            AlertBox.display("Select a book to remove");
+            return;
+        }
+        modelManagement.removeBook(selectedBookFromGUI);
+        AlertBox.display("Book removed successfully");
+        updateTableGUI();
 
 
-    modelManagement.removeBook(selectedItems.get(0));
+    }
+
+    private void updateTableGUI(){
+        tableView.setItems(FXCollections.observableList(modelManagement.getAllBookItems()));
     }
 }

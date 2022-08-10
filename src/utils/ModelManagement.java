@@ -112,12 +112,10 @@ public class ModelManagement {
     }
 
     public void  removeBook(Book  book){
-        ItemsList removeBookList = getAllItemList();
-
-
-        removeBookList.removeBook(book);
-        System.out.println("Succsfully deæeted");
-        saveItems(removeBookList);
+        ItemsList allItems = getAllItemList();
+        allItems.removeBook(book);
+        System.out.println("Successfully deleted");
+        saveItems(allItems);
 
     }
 
